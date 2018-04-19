@@ -207,7 +207,6 @@ def index_of_largest_number(numbers, n):
     return largest_index
 
 
-
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through the sequence accessing TWO
 # (or more) places in the sequence AT THE SAME ITERATION, like these:
@@ -258,9 +257,15 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    stutters = 0
+    for k in range(len(s) - 1):
+        if s[k] == s[k + 1]:
+            stutters = stutters + 1
+    return stutters
 
 
 def run_test_is_palindrome():
@@ -331,7 +336,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -340,6 +345,11 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+
+    for k in range(len(s)):
+        if s[k] != s[-k - 1]:
+            return False
+    return True
 
 
 # ----------------------------------------------------------------------
@@ -398,9 +408,15 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    same = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            same = same + 1
+    return same
 
 
 # ----------------------------------------------------------------------
